@@ -16,6 +16,8 @@ bool AskPlayAgain();
 
 FBullCowGame BCGame; //instantiate a new game
 
+Ftext Guess = "";
+
 //the entry point for our application
 
 int main()
@@ -57,9 +59,13 @@ void PlayGame()
 	for (int32 count = 1; count <= MaxTries; count++)
 	{
 		GetGuess();   //TODO make loop checking valid
+
 		//submit valid guess to the game
-		//print number of bulls and cows
-		std::cout << std::endl;
+		 //print number of bulls and cows
+		FBullCowCount BullCowCount= BCGame.SubmitGuess(Guess);
+		
+		std::cout << "Bulls = " << BullCowCount.Bulls;
+		std::cout << ". Cows = " << BullCowCount.Cows;
 
 	}
 	//TODO add a game summary
@@ -72,9 +78,9 @@ Ftext GetGuess()
 	int32 CurrentTry = BCGame.GetCurrentTry();
 
 	std::cout << "Enter your guess: ";
-	Ftext Guess = "";
+	
 	std::getline(std::cin, Guess);
-	std::cout << "Try " << CurrentTry << ". Your guess was: " << Guess;
+	std::cout << "Try " << CurrentTry;
 	std::cout << std::endl;
 
 	return Guess;
