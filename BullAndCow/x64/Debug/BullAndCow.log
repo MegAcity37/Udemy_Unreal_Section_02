@@ -1,4 +1,8 @@
 ﻿  main.cpp
-c:\users\meggy sue\documents\visual studio 2017\projects\section_02\bullandcow\main.cpp(104): warning C4715: 'GetValidGuess': not all control paths return a value
-  BullAndCow.vcxproj -> C:\Users\Meggy Sue\Documents\Visual Studio 2017\Projects\Section_02\x64\Debug\BullAndCow.exe
-  BullAndCow.vcxproj -> C:\Users\Meggy Sue\Documents\Visual Studio 2017\Projects\Section_02\x64\Debug\BullAndCow.pdb (Partial PDB)
+c:\users\meggy sue\documents\visual studio 2017\projects\section_02\bullandcow\main.cpp(58): error C3867: 'FBullCowGame::GetCurrentTry': non-standard syntax; use '&' to create a pointer to member
+c:\users\meggy sue\documents\visual studio 2017\projects\section_02\bullandcow\main.cpp(58): error C2446: '<=': no conversion from 'int32' to 'int32 (__cdecl FBullCowGame::* )(void) const'
+  c:\users\meggy sue\documents\visual studio 2017\projects\section_02\bullandcow\main.cpp(58): note: There are no conversions from integral values to pointer-to-member values
+  fBullCowGame.cpp
+c:\users\meggy sue\documents\visual studio 2017\projects\section_02\bullandcow\fbullcowgame.cpp(11): warning C4267: 'return': conversion from 'size_t' to 'int32', possible loss of data
+c:\users\meggy sue\documents\visual studio 2017\projects\section_02\bullandcow\fbullcowgame.cpp(59): warning C4267: 'initializing': conversion from 'size_t' to 'int32', possible loss of data
+  Generating Code...
