@@ -1,4 +1,5 @@
 ﻿  fBullCowGame.cpp
-c:\users\meggy sue\documents\visual studio 2017\projects\section_02\bullandcow\fbullcowgame.cpp(40): warning C4267: 'initializing': conversion from 'size_t' to 'int32', possible loss of data
+c:\users\meggy sue\documents\visual studio 2017\projects\section_02\bullandcow\fbullcowgame.cpp(11): warning C4267: 'return': conversion from 'size_t' to 'int32', possible loss of data
+c:\users\meggy sue\documents\visual studio 2017\projects\section_02\bullandcow\fbullcowgame.cpp(44): warning C4267: 'initializing': conversion from 'size_t' to 'int32', possible loss of data
   BullAndCow.vcxproj -> C:\Users\Meggy Sue\Documents\Visual Studio 2017\Projects\Section_02\x64\Debug\BullAndCow.exe
   BullAndCow.vcxproj -> C:\Users\Meggy Sue\Documents\Visual Studio 2017\Projects\Section_02\x64\Debug\BullAndCow.pdb (Partial PDB)

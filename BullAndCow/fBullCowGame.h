@@ -19,9 +19,11 @@ public:
 	
 	int32 GetMaxTries() const;
 	int32 GetCurrentTry() const;
+	int32 GetHiddenWordLength() const;
+	bool CheckGuessValidity(FString) const;
 	bool IsGameWon() const;
 
-	bool CheckGuessValidity(FString);
+
 	void Reset(); 
 
 	FBullCowCount SubmitGuess(FString);
