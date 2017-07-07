@@ -79,10 +79,12 @@ FBullCowCount FBullCowGame::SubmitValidGuess(FString Guess)
 	}
 	if (BullCowCount.Bulls == HiddenWordLength) {
 		bGameIsWon = true;
+		
 	}
 	else
 	{
 		bGameIsWon = false;
+		
 	}
 
 	return BullCowCount;

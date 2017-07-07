@@ -13,6 +13,7 @@ void PrintIntro();
 void PlayGame();
 Ftext GetValidGuess();
 bool AskPlayAgain();
+void PrintGameSummary();
 
 FBullCowGame BCGame; //instantiate a new game
 
@@ -50,13 +51,13 @@ void PlayGame()
 	BCGame.Reset();
 	//play the game
 
-	int32 MaxTries = BCGame.GetMaxTries();
+	int32 bMaxTries = BCGame.GetMaxTries();
 
 	//loop for # of guesses while the game is not won and there are still tries remaining
 	//TODO change from FOR to WHILE loop once we are validating tries
 
-	while (!BCGame.IsGameWon() && BCGame.GetCurrentTry <= MaxTries) {
-
+	while (!BCGame.IsGameWon() && BCGame.GetCurrentTry <= bMaxTries) 
+	{
 		Ftext Guess = GetValidGuess();   
 		
 		//submit valid guess to the game
@@ -64,9 +65,11 @@ void PlayGame()
 		
 		std::cout << "Bulls = " << BullCowCount.Bulls;
 		std::cout << ". Cows = " << BullCowCount.Cows << "\n\n";
-
 	}
+
+	PrintGameSummary();
 	//TODO add a game summary
+	return;
 }
 
 
@@ -101,6 +104,19 @@ Ftext GetValidGuess()  //TODO loop until user gives a valid guess
 		}
 	} while (Status != EGuessStatus::OK); //keep looping until we get no error}
 	return Guess;
+}
+
+void PrintGameSummary() 
+{
+	if (BCGame.IsGameWon()) 
+	{
+		std::cout << "Congratulations!  You guessed the isogram! \n";
+	}
+	else 
+	{
+		std::cout << "Too bad, you didn't guess the isogram this time. \n";
+	}
+	
 }
 
 bool AskPlayAgain()
