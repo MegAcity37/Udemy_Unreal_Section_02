@@ -42,5 +42,7 @@ private:
 	int32 MyMaxTries;
 	FString MyHiddenWord;
 	bool bGameIsWon;
-	// provide a method for counting bulls and cows, and incrementing turn #
+	bool IsIsogram(FString) const;
+	bool IsLowercase(FString) const;
+	
 };

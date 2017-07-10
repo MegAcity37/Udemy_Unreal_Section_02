@@ -56,7 +56,7 @@ void PlayGame()
 	//loop for # of guesses while the game is not won and there are still tries remaining
 	//TODO change from FOR to WHILE loop once we are validating tries
 
-	while (!BCGame.IsGameWon() && BCGame.GetCurrentTry <= bMaxTries) 
+	while (!BCGame.IsGameWon() && BCGame.GetCurrentTry() <= bMaxTries) 
 	{
 		Ftext Guess = GetValidGuess();   
 		
@@ -81,7 +81,8 @@ Ftext GetValidGuess()  //TODO loop until user gives a valid guess
 	do {//get a guess from the player
 		int32 CurrentTry = BCGame.GetCurrentTry();
 
-		std::cout << "Try " << CurrentTry << "\n Enter your guess: ";
+		std::cout << "Try " << CurrentTry << " of " << BCGame.GetMaxTries();
+		std::cout << "\nEnter your guess: ";
 		std::cout << std::endl;
 
 		
@@ -91,13 +92,13 @@ Ftext GetValidGuess()  //TODO loop until user gives a valid guess
 		switch (Status)
 		{
 		case EGuessStatus::Wrong_Length:
-			std::cout << "Please enter a " << BCGame.GetHiddenWordLength() << " letter word. \n";
+			std::cout << "Please enter a " << BCGame.GetHiddenWordLength() << " letter word. \n\n";
 			break;
 		case EGuessStatus::Not_Isogram:
-			std::cout << "Please enter an isogram.  (An isogram is a word with no repeating letters. \n)";
+			std::cout << "Please enter an isogram.  (An isogram is a word with no repeating letters.)\n\n";
 			break;
 		case EGuessStatus::Not_Lowercase:
-			std::cout << "Please enter your word in lowercase. \n";
+			std::cout << "Please enter your word in lowercase. \n\n";
 			break;
 		default:
 			return Guess; //assume guess is valid
